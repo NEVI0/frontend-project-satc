@@ -1,0 +1,38 @@
+:root {
+  line-height: 1.5;
+  font-weight: 400;
+  
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+
+  --color-primary: #535bf2;
+  --color-secondary: #3a43ee;
+
+  --text-color-primary: #111113;
+  --text-color-secondary: #86868a;
+  
+  --color-gray: #c3c3c7;
+
+  --color-body: #fff;
+  --color-container: #fbfbff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  font-family: var(--font-family);
+}
+
+body {
+  background-color: var(--color-body);
+}
+
+h1, h2, h3, h4, p, small, caption, input {
+  color: var(--text-color-primary);
+}

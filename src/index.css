@@ -10,7 +10,7 @@
   --font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 
   --color-primary: #535bf2;
-  --color-secondary: #3a43ee;
+  --color-secondary: #340fdb;
 
   --text-color-primary: #111113;
   --text-color-secondary: #86868a;
@@ -18,7 +18,7 @@
   --color-gray: #c3c3c7;
 
   --color-body: #fff;
-  --color-container: #fbfbff;
+  --color-container: #f5f5ff;
 }
 
 * {

@@ -13,6 +13,8 @@ interface InputProps {
     placeholder?: string;
     type?: React.HTMLInputTypeAttribute;
     icon?: keyof typeof ICONS;
+    min?: number;
+    max?: number;
     onChangeValue: (value: string) => void;
 }
 
@@ -24,6 +26,8 @@ export const Input: FC<InputProps> = ({
     placeholder,
     type = 'text',
     icon,
+    min,
+    max,
     onChangeValue
 }) => {
     return (
@@ -41,6 +45,8 @@ export const Input: FC<InputProps> = ({
                     type={type}
                     value={value}
                     placeholder={placeholder}
+                    min={min}
+                    max={max}
                     onChange={event => onChangeValue(event.target.value)}
                     className="input-field"
                 />

@@ -37,12 +37,10 @@
     font-size: 1rem;
     font-weight: 400;
 }
-.input-field:focus ~ .input-icon{
-    color: var(--color-primary);
-}
 
 .input-icon {
-    transition: .3s;
+    color: var(--color-primary);
+
     font-size: 1.25rem;
     margin-right: 1.5rem;
 }

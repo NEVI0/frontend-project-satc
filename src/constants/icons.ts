@@ -37,5 +37,5 @@ export const ICONS = {
 	'currency': Feather.FiDollarSign,
 	'arrow-left': Feather.FiArrowLeft,
 	'message': Feather.FiMessageSquare,
-	'arrow-right': Feather.FiArrowRight
+	'arrow-right': Feather.FiArrowRight,
 };

@@ -1,11 +1,20 @@
 import { FC } from 'react';
-import { Link } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
+
+import { Header, Content, Footer } from '../../components';
+
+import './styles.css';
 
 export const Home: FC = () => {
     return (
-        <div>Home
+        <div className='Home'>
+            <Header />
+            
+            <Content>
+                <Outlet />
+            </Content>
 
-            <Link to="/auth">Auth Link</Link>
-        </div>
-    )
+            <Footer />
+        </div> 
+    );
 }

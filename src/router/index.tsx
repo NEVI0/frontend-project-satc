@@ -1,12 +1,30 @@
 import { createBrowserRouter } from 'react-router-dom';
 
-import { Home } from '../pages/Home';
-import { Auth } from '../pages/Auth';
+import { Home, Auth, Products, NewProduct, UpdateProduct } from '../pages';
+import { ProductContextProvider } from '../contexts/ProductContext';
 
 export const router = createBrowserRouter([
     {
         path: '/',
-        element: <Home />,
+        element: (
+            <ProductContextProvider>
+                <Home />
+            </ProductContextProvider>
+        ),
+        children: [
+            {
+                path: '/',
+                element: <Products />,
+            },
+            {
+                path: '/product',
+                element: <NewProduct />,
+            },
+            {
+                path: '/product/:id',
+                element: <UpdateProduct />
+            }
+        ],
     },
     {
         path: '/auth',

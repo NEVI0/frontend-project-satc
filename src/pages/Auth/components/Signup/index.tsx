@@ -1,15 +1,26 @@
 import { FC, useState } from 'react';
 
+import { useUserContext } from '../../../../contexts/UserContext';
+
 import { Button, Input } from '../../../../components';
 
 export const Signup: FC = () => {
-    const [ name, setName ] = useState<string>('');
-    const [ email, setEmail ] = useState<string>('');
-    const [ password, setPassword ] = useState<string>('');
-    const [ confPassword, setConfPassword ] = useState<string>('');
+    const { signup } = useUserContext();
+
+    const [name, setName] = useState<string>('');
+    const [email, setEmail] = useState<string>('');
+    const [password, setPassword] = useState<string>('');
+    const [confPassword, setConfPassword] = useState<string>('');
+
+    const handleSubmit = async (event: React.FormEvent<HTMLElement>) => {
+        event.preventDefault();
+        if (password !== confPassword) return alert('As senhas não são iguais!');
+
+        await signup(name, email, password);
+    }
 
     return (
-        <section className="container right">
+        <section className="container right" onSubmit={handleSubmit}>
             <h1 className="title">
                 Criar minha conta
             </h1>
@@ -22,6 +33,7 @@ export const Signup: FC = () => {
                         label='Seu nome'
                         icon='user'
                         placeholder='Meu nome e sobrenome'
+                        required={true}
                         value={name}
                         onChangeValue={setName}
                     />
@@ -32,6 +44,7 @@ export const Signup: FC = () => {
                         label='E-mail'
                         icon='mail'
                         placeholder='examplo@gmail.com'
+                        required={true}
                         value={email}
                         onChangeValue={setEmail}
                     />
@@ -41,6 +54,7 @@ export const Signup: FC = () => {
                         type='password'
                         label='Senha'
                         icon='lock'
+                        required={true}
                         value={password}
                         onChangeValue={setPassword}
                     />
@@ -50,6 +64,7 @@ export const Signup: FC = () => {
                         type='password'
                         label='Confirme sua senha'
                         icon='lock'
+                        required={true}
                         value={confPassword}
                         onChangeValue={setConfPassword}
                     />

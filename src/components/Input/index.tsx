@@ -15,6 +15,7 @@ interface InputProps {
     icon?: keyof typeof ICONS;
     min?: number;
     max?: number;
+    required?: boolean;
     onChangeValue: (value: string) => void;
 }
 
@@ -28,6 +29,7 @@ export const Input: FC<InputProps> = ({
     icon,
     min,
     max,
+    required = false,
     onChangeValue
 }) => {
     return (
@@ -47,6 +49,7 @@ export const Input: FC<InputProps> = ({
                     placeholder={placeholder}
                     min={min}
                     max={max}
+                    required={required}
                     onChange={event => onChangeValue(event.target.value)}
                     className="input-field"
                 />

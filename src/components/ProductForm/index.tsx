@@ -41,6 +41,7 @@ export const ProductForm: FC<ProductFormProps> = ({ button, name, price, stock, 
                 label='Nome do produto'
                 name='name'
                 icon='tag'
+                required={true}
                 value={name.value}
                 onChangeValue={name.setValue}
             />
@@ -51,6 +52,7 @@ export const ProductForm: FC<ProductFormProps> = ({ button, name, price, stock, 
                 icon='currency'
                 type='number'
                 min={0}
+                required={true}
                 value={String(price.value)}
                 onChangeValue={value => price.setValue(Number(value))}
             />
@@ -61,6 +63,7 @@ export const ProductForm: FC<ProductFormProps> = ({ button, name, price, stock, 
                 icon='cart'
                 type='number'
                 min={0}
+                required={true}
                 value={String(stock.value)}
                 onChangeValue={value => stock.setValue(Number(value))}
             />

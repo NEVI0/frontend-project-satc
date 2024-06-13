@@ -1,13 +1,22 @@
 import { FC, useState } from 'react';
 
+import { useUserContext } from '../../../../contexts/UserContext';
+
 import { Button, Input } from '../../../../components';
 
 export const Signin: FC = () => {
-    const [ email, setEmail ] = useState<string>('');
-    const [ password, setPassword ] = useState<string>('');
+    const { signin } = useUserContext();
+
+    const [email, setEmail] = useState<string>('');
+    const [password, setPassword] = useState<string>('');
+
+    const handleSubmit = async (event: React.FormEvent<HTMLElement>) => {
+        event.preventDefault();
+        await signin(email, password);
+    }
 
     return (
-        <section className="container left">
+        <section className="container left" onSubmit={handleSubmit}>
             <h1 className="title">
                 Entrar no sistema
             </h1>
@@ -20,6 +29,7 @@ export const Signin: FC = () => {
                         label='E-mail'
                         icon='mail'
                         placeholder='examplo@gmail.com'
+                        required={true}
                         value={email}
                         onChangeValue={setEmail}
                     />
@@ -29,6 +39,7 @@ export const Signin: FC = () => {
                         type='password'
                         label='Senha'
                         icon='lock'
+                        required={true}
                         value={password}
                         onChangeValue={setPassword}
                     />

@@ -27,3 +27,16 @@ nav a:focus {
     color: var(--color-secondary);
     
 }
+
+nav button {
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    color: var(--color-primary);
+    transition: .3s;
+    border: none;
+    outline: none;
+    background: none;
+
+    cursor: pointer;
+}

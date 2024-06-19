@@ -4,29 +4,23 @@ import { HTTP_URL } from '../constants/http';
 const url = HTTP_URL + '/users';
 
 export const fetchUserByEmailService = async (email: string) => {
-    const response = await fetch(url);
+    const response = await fetch(`${url}?email=${email}`);
     const users = await response.json() as IUser[];
 
-    const user = users.find(user => user.email === email);
+    if (!users.length) return null;
+    delete users[0].password;
 
-    if (!user) return null;
-    delete user.password;
-
-    return user;
+    return users[0];
 }
 
 export const fetchUserByEmailAndPasswordService = async (email: string, password: string) => {
-    const response = await fetch(url);
+    const response = await fetch(`${url}?email=${email}&password=${password}`);
     const users = await response.json() as IUser[];
 
-    const user = users.find(
-        user => user.email === email && user.password === password
-    );
+    if (!users.length) return null;
+    delete users[0].password;
 
-    if (!user) return null;
-    delete user.password;
-
-    return user;
+    return users[0];
 }
 
 export const addUserService = async (user: Omit<IUser, 'id'>) => {

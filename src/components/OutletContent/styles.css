@@ -3,3 +3,22 @@ section {
     flex-direction: column;
     gap: 4rem;
 }
+
+section > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+section > div > div > button {
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    color: var(--color-primary);
+    transition: .3s;
+    border: none;
+    outline: none;
+    background: none;
+
+    cursor: pointer;
+}

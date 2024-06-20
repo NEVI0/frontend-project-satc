@@ -3,8 +3,7 @@ header {
     align-items: center;
     justify-content: space-between;
 
-    height: 80px;
-    padding: 0 12rem;
+    padding: 1.5rem 12rem;
 
     border-bottom: 1px solid var(--color-gray);
 }

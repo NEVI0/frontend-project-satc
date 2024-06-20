@@ -1,6 +1,6 @@
 import { createBrowserRouter } from 'react-router-dom';
 
-import { Home, Products, NewProduct, UpdateProduct } from '../pages';
+import { Home, Products, NewProduct, UpdateProduct, User } from '../pages';
 import { ProductContextProvider } from '../contexts/ProductContext';
 
 export const router = createBrowserRouter([
@@ -23,6 +23,10 @@ export const router = createBrowserRouter([
             {
                 path: '/product/:id',
                 element: <UpdateProduct />
+            },
+            {
+                path: '/user',
+                element: <User />
             }
         ],
     },

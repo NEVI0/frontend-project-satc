@@ -55,7 +55,7 @@ export const UpdateProduct: FC = () => {
     }
 
     return (
-        <OutletContent title='Atualizar Produto'>
+        <OutletContent title='Atualizar produto'>
             <ProductForm
                 button={{
                     text: 'Atualizar',

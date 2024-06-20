@@ -1,13 +1,15 @@
 import { FC, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import { useProductContext } from '../../contexts/ProductContext';
 
+import { OutletContent } from '../../components';
 import { Table } from './components';
-
-import './styles.css';
 
 export const Products: FC = () => {
     const { fetchProducts } = useProductContext();
+
+    const navigate = useNavigate();
 
     useEffect(() => {
         (async () => {
@@ -16,12 +18,17 @@ export const Products: FC = () => {
     }, []);
 
     return (
-        <div className='Products'>
-            <h2>
-                Produtos cadastrados
-            </h2>
-
+        <OutletContent
+            title='Produtos'
+            actions={[
+                {
+                    text: 'Novo',
+                    color: '#535bf2',
+                    onClick: () => navigate('/product')
+                }
+            ]}
+        >
             <Table />
-        </div>
+        </OutletContent>
     );
 }

@@ -20,7 +20,7 @@ export const NewProduct: FC = () => {
     }
     
     return (
-        <OutletContent title='Cadastrar Novo Produto'>
+        <OutletContent title='Cadastrar novo produto'>
             <ProductForm
                 button={{
                     text: 'Cadastrar',

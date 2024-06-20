@@ -10,6 +10,9 @@ export interface IUserContext {
     signin(email: string, password: string): void;
     signup(name: string, email: string, password: string): void;
     signout(): void;
+
+    updateUser(name: string, email: string, password: string): void;
+    deleteUser(): void;
 }
 
 export const UserContext: Context<IUserContext> = createContext({} as IUserContext);

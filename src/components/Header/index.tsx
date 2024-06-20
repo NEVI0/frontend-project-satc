@@ -21,7 +21,7 @@ export const Header: FC = () => {
 
             <nav>
                 <Link to="/">Produtos</Link>
-                <Link to="/product">Cadastro</Link>
+                <Link to="/user">Minha conta</Link>
 
                 <button type='button' onClick={signout}>
                     Sair
